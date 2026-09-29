@@ -1,0 +1,11 @@
+{
+  "name": "motion-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium motion-design website with animation, transition, image-loading, and scroll-process demos.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}

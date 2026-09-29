@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A premium motion design reference with 120 accurately explained web animations, 24 transitions, and scroll image animation examples."
+    />
+    <title>Motion Atlas | 120 Animation Explanations</title>
+    <link rel="preload" as="image" href="assets/motion-atlas-hero.png" />
+    <link rel="preload" as="image" href="assets/realistic-laptop-cutaway.png" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-reveal>
+      <a class="brand" href="#top" aria-label="Motion Atlas home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Motion Atlas</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#animations">Animations</a>
+        <a href="#transitions">Transitions</a>
+        <a href="#image-loading">Image Loading</a>
+        <a href="#scroll-gallery">Live Scroll</a>
+        <a href="#principles">Principles</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="assets/motion-atlas-hero.png"
+            alt=""
+          />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content" data-reveal>
+          <p class="eyebrow">Premium web motion reference</p>
+          <h1>120 animations explained with precise CSS behavior.</h1>
+          <p class="hero-copy">
+            A polished single-page website covering transform, opacity, filter,
+            clip-path, timing, easing, transitions, and scroll-linked product motion.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#animations">Explore the atlas</a>
+            <a class="button secondary" href="#scroll-gallery">View live scroll process</a>
+          </div>
+        </div>
+        <div class="hero-stats" data-reveal>
+          <div><strong id="animationCount">120</strong><span>animations</span></div>
+          <div><strong id="transitionCount">24</strong><span>transitions</span></div>
+          <div><strong>6</strong><span>process steps</span></div>
+        </div>
+      </section>
+
+      <section class="intro-band">
+        <div data-reveal>
+          <p class="section-kicker">Built like a design system</p>
+          <h2>Each example states what moves, why it works, and when to use it.</h2>
+        </div>
+        <div class="principle-grid">
+          <article data-reveal>
+            <h3>Performance first</h3>
+            <p>Most demos use transform and opacity because they avoid layout reflow and usually stay GPU-friendly.</p>
+          </article>
+          <article data-reveal>
+            <h3>Readable motion</h3>
+            <p>Durations, delays, and easing are labeled so the motion can be copied without guessing.</p>
+          </article>
+          <article data-reveal>
+            <h3>Accessible by default</h3>
+            <p>The site respects reduced-motion preferences and removes non-essential movement when requested.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="journey-section" aria-labelledby="journey-title">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Premium motion journey</p>
+          <h2 id="journey-title">A guided track from idea to production-ready motion</h2>
+          <p>
+            The horizontal cards show how professional motion decisions progress:
+            intent, property choice, timing, performance, accessibility, and final polish.
+          </p>
+        </div>
+        <div class="journey-track" aria-label="Motion production journey">
+          <article class="journey-card" data-reveal>
+            <span>01</span>
+            <h3>Intent</h3>
+            <p>Start with the user meaning: reveal, confirm, warn, guide, or create spatial continuity.</p>
+          </article>
+          <article class="journey-card" data-reveal>
+            <span>02</span>
+            <h3>Property</h3>
+            <p>Choose transform and opacity for repeated UI motion; use filter and shadow only when the visual payoff is worth it.</p>
+          </article>
+          <article class="journey-card" data-reveal>
+            <span>03</span>
+            <h3>Timing</h3>
+            <p>Keep micro-interactions tight at 150-300ms and reserve longer motion for editorial reveals or scroll storytelling.</p>
+          </article>
+          <article class="journey-card" data-reveal>
+            <span>04</span>
+            <h3>Easing</h3>
+            <p>Use ease-out for entering content, ease-in for exits, and spring curves only when elasticity matches the action.</p>
+          </article>
+          <article class="journey-card" data-reveal>
+            <span>05</span>
+            <h3>Layering</h3>
+            <p>Create depth with sticky images, parallax offsets, glass panels, and careful contrast instead of constant movement.</p>
+          </article>
+          <article class="journey-card" data-reveal>
+            <span>06</span>
+            <h3>Reduced motion</h3>
+            <p>Honor OS-level motion preferences so the premium experience stays usable for motion-sensitive visitors.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="animations" class="section">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Animation library</p>
+          <h2>More than 100 accurately explained CSS animations</h2>
+          <p>
+            Filter by motion family. Every card includes the property being animated,
+            the recommended use case, and a live miniature preview.
+          </p>
+        </div>
+        <div class="toolbar" aria-label="Animation filters" data-reveal>
+          <div class="filter-set">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Entrance">Entrance</button>
+            <button class="filter-btn" data-filter="Emphasis">Emphasis</button>
+            <button class="filter-btn" data-filter="Depth">Depth</button>
+            <button class="filter-btn" data-filter="Text">Text</button>
+            <button class="filter-btn" data-filter="Utility">Utility</button>
+          </div>
+          <label class="search-box">
+            <span>Search</span>
+            <input id="animationSearch" type="search" placeholder="fade, clip, transform..." autocomplete="off" />
+          </label>
+        </div>
+        <div id="animationGrid" class="motion-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="transitions" class="section transition-section">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Transition catalog</p>
+          <h2>24 premium transitions for states, routes, panels, and media</h2>
+          <p>
+            Transitions explain state changes rather than looping motion. These
+            examples focus on hover, focus, active, and content-swap behavior.
+          </p>
+        </div>
+        <div id="transitionGrid" class="transition-grid"></div>
+      </section>
+
+      <section id="image-loading" class="section image-loading-section">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Image loading animation lab</p>
+          <h2>12 detailed loading patterns for galleries, hero images, and media cards</h2>
+          <p>
+            These examples show the placeholder, reveal animation, performance reason,
+            and correct use case. Every preview uses a stable aspect ratio to prevent
+            layout shift while the image loads.
+          </p>
+        </div>
+        <div class="loading-grid">
+          <article class="load-card" data-reveal>
+            <figure class="load-preview shimmer-load">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Creative office lounge with warm lighting" loading="lazy" />
+            </figure>
+            <h3>Skeleton shimmer</h3>
+            <p>A neutral skeleton shows the image footprint immediately. The shimmer moves only while loading, then fades out.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> card grids and feeds</li>
+              <li><span>Animates:</span> background-position + opacity</li>
+              <li><span>Why:</span> prevents a blank wait state</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview blur-load">
+              <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80" alt="Geometric architecture facade in daylight" loading="lazy" />
+            </figure>
+            <h3>Blur-up reveal</h3>
+            <p>The image starts blurred and slightly enlarged, then sharpens into place after load. This hides compression and decoding delay.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> editorial photos</li>
+              <li><span>Animates:</span> filter + transform + opacity</li>
+              <li><span>Why:</span> feels smoother than an instant swap</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview color-load">
+              <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80" alt="Bright desk setup with laptop and notebook" loading="lazy" />
+            </figure>
+            <h3>Dominant color plate</h3>
+            <p>A tinted plate approximates the image mood before the real pixels arrive. It reduces perceived flicker in image-heavy pages.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> thumbnails and cards</li>
+              <li><span>Animates:</span> opacity crossfade</li>
+              <li><span>Why:</span> keeps the page visually filled</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview wipe-load">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Modern home exterior with garden" loading="lazy" />
+            </figure>
+            <h3>Horizontal wipe</h3>
+            <p>A mask opens from left to right when the asset is ready. It works well for premium product and architecture imagery.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> hero media and feature rows</li>
+              <li><span>Animates:</span> clip-path</li>
+              <li><span>Why:</span> turns loading into a deliberate reveal</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview zoom-load">
+              <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80" alt="Team collaborating around a table" loading="lazy" />
+            </figure>
+            <h3>Zoom settle</h3>
+            <p>The image begins slightly scaled up and settles to 100 percent. This creates a soft cinematic arrival without moving layout.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> large feature images</li>
+              <li><span>Animates:</span> transform + opacity</li>
+              <li><span>Why:</span> gives images weight and polish</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview grayscale-load">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Premium studio interior with desks" loading="lazy" />
+            </figure>
+            <h3>Grayscale to color</h3>
+            <p>Color returns after the image is available. It is useful when you want a refined reveal without spatial motion.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> portfolios and galleries</li>
+              <li><span>Animates:</span> filter + opacity</li>
+              <li><span>Why:</span> adds feedback while keeping layout stable</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview aperture-load">
+              <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80" alt="Angled architectural pattern" loading="lazy" />
+            </figure>
+            <h3>Aperture open</h3>
+            <p>A circular mask expands from the center, similar to a camera aperture. It should be reserved for special media moments.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> featured gallery items</li>
+              <li><span>Animates:</span> clip-path circle</li>
+              <li><span>Why:</span> focuses attention on the image center</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview scan-load">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80" alt="Retro technology display with neon lighting" loading="lazy" />
+            </figure>
+            <h3>Scanline reveal</h3>
+            <p>A thin scan highlight passes over the placeholder while loading. It suggests processing without using a generic spinner.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> technical dashboards</li>
+              <li><span>Animates:</span> transform on overlay</li>
+              <li><span>Why:</span> communicates activity with minimal layout cost</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview split-load">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Office lounge seating area" loading="lazy" />
+            </figure>
+            <h3>Split curtain</h3>
+            <p>Two panels move apart once the image is decoded. This is more theatrical, so use it for a small number of premium images.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> case-study covers</li>
+              <li><span>Animates:</span> transform on pseudo-elements</li>
+              <li><span>Why:</span> creates a strong reveal without resizing</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview rise-load">
+              <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80" alt="Minimal bright workspace" loading="lazy" />
+            </figure>
+            <h3>Soft rise</h3>
+            <p>The loaded image fades in while translating a few pixels upward. It pairs well with card reveal animations.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> masonry grids</li>
+              <li><span>Animates:</span> translateY + opacity</li>
+              <li><span>Why:</span> gives loaded content a gentle entrance</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview focus-load">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Modern residential architecture exterior" loading="lazy" />
+            </figure>
+            <h3>Focus pull</h3>
+            <p>The image resolves from soft focus to sharp focus. This is best when the source image has strong depth or texture.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> lifestyle and product photos</li>
+              <li><span>Animates:</span> blur + saturation</li>
+              <li><span>Why:</span> mimics camera focusing</li>
+            </ul>
+          </article>
+
+          <article class="load-card" data-reveal>
+            <figure class="load-preview frame-load">
+              <img src="assets/motion-atlas-hero.png" alt="Custom motion design studio hero artwork" loading="lazy" />
+            </figure>
+            <h3>Frame build</h3>
+            <p>A border frame draws around the media while loading, then the image fades through it. It suits premium branded visuals.</p>
+            <ul class="spec-list">
+              <li><span>Best for:</span> hero art and product shots</li>
+              <li><span>Animates:</span> border scale + image opacity</li>
+              <li><span>Why:</span> makes the wait feel intentional</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="scroll-gallery" class="scroll-gallery laptop-story" aria-labelledby="laptopStoryTitle">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Live scroll process</p>
+          <h2 id="laptopStoryTitle">Scroll to open a laptop and watch cooling airflow move through it</h2>
+          <p>
+            This is not a pasted image gallery. The device is built from layered
+            HTML and CSS, then controlled by scroll progress: the lid opens, the
+            internals reveal, heat builds near the processor, air enters through
+            the intake, and warm air exits through the rear vents.
+          </p>
+        </div>
+
+        <div class="laptop-scrolly" aria-label="Scroll-driven laptop cooling explanation">
+          <div class="laptop-visual-wrap">
+            <div class="laptop-visual" role="img" aria-label="Animated laptop opening to reveal cooling vents, processor heat, fan airflow, and exhaust path">
+              <div class="scene-grid" aria-hidden="true"></div>
+              <img class="real-laptop-image" src="assets/realistic-laptop-cutaway.png" alt="Realistic open aluminum laptop with a visible cooling cutaway, fan, chip, heat pipe, keyboard, ports, and rear vents" loading="lazy" />
+              <div class="real-cooling-overlay" aria-hidden="true">
+                <div class="real-screen-sheen"></div>
+                <div class="real-hotspot real-chip-hotspot"><span>CPU</span></div>
+                <div class="real-hotspot real-fan-hotspot"></div>
+                <div class="real-heat-pipe"></div>
+                <div class="real-flow real-intake-flow"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="real-flow real-exhaust-flow"><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="laptop-device" aria-hidden="true">
+                <div class="laptop-lid">
+                  <div class="lid-shell"></div>
+                  <div class="screen-glass">
+                    <div class="webcam"></div>
+                    <div class="screen-topbar"></div>
+                    <div class="screen-wave"></div>
+                    <div class="screen-code line-a"></div>
+                    <div class="screen-code line-b"></div>
+                    <div class="screen-code line-c"></div>
+                  </div>
+                </div>
+                <div class="laptop-hinge">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="laptop-base">
+                  <div class="base-bevel"></div>
+                  <div class="front-lip"></div>
+                  <div class="rubber-foot foot-left"></div>
+                  <div class="rubber-foot foot-right"></div>
+                  <div class="port-row port-left"><span></span><span></span></div>
+                  <div class="port-row port-right"><span></span><span></span></div>
+                  <div class="internal-layer">
+                    <div class="board"></div>
+                    <div class="battery"></div>
+                    <div class="screw screw-a"></div>
+                    <div class="screw screw-b"></div>
+                    <div class="screw screw-c"></div>
+                    <div class="screw screw-d"></div>
+                    <div class="chip">
+                      <span>CPU</span>
+                      <i></i>
+                    </div>
+                    <div class="heat-ring ring-one"></div>
+                    <div class="heat-ring ring-two"></div>
+                    <div class="fan">
+                      <span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="heat-pipe pipe-one"></div>
+                    <div class="heat-pipe pipe-two"></div>
+                    <div class="vent vent-left"></div>
+                    <div class="vent vent-right"></div>
+                    <div class="airflow intake-flow">
+                      <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="airflow exhaust-flow">
+                      <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                  </div>
+                  <div class="keyboard-layer">
+                    <div class="speaker-grille speaker-left"></div>
+                    <div class="speaker-grille speaker-right"></div>
+                    <div class="key-grid">
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="trackpad"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="callout callout-lid"><strong>Lid angle</strong><span>0° to 112°</span></div>
+              <div class="callout callout-chip"><strong>Heat source</strong><span>CPU load increases</span></div>
+              <div class="callout callout-vents"><strong>Air path</strong><span>intake to exhaust</span></div>
+              <div class="progress-rail"><span></span></div>
+            </div>
+          </div>
+
+          <div class="story-steps">
+            <article class="story-step" data-story-step="0">
+              <span>01</span>
+              <h3>Real laptop hardware appears</h3>
+              <p>The scene now uses a photorealistic laptop asset with aluminum body, keyboard, hinge, ports, vents, and an exposed cooling bay instead of a flat CSS mockup.</p>
+            </article>
+            <article class="story-step" data-story-step="1">
+              <span>02</span>
+              <h3>The display and chassis are identified</h3>
+              <p>As you scroll, the screen sheen and callouts make the physical structure clear before the cooling path is highlighted.</p>
+            </article>
+            <article class="story-step" data-story-step="2">
+              <span>03</span>
+              <h3>Internal cooling area is highlighted</h3>
+              <p>The exposed service-panel area is emphasized so the fan, chip area, heat pipe, and vent path become the focus of the scene.</p>
+            </article>
+            <article class="story-step" data-story-step="3">
+              <span>04</span>
+              <h3>Heat builds around the processor</h3>
+              <p>The CPU glow and expanding heat rings show where thermal energy starts. The fan speed increases only after this step becomes active.</p>
+            </article>
+            <article class="story-step" data-story-step="4">
+              <span>05</span>
+              <h3>Cool air enters through intake vents</h3>
+              <p>Blue particles move from the lower vent area toward the fan. This shows the intake path instead of simply placing random arrows on top.</p>
+            </article>
+            <article class="story-step" data-story-step="5">
+              <span>06</span>
+              <h3>Warm air exits through the rear vents</h3>
+              <p>Amber particles flow across the heat pipe and leave through the exhaust vents. The progress rail fills to confirm the process is complete.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" class="section principles">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Accuracy notes</p>
+          <h2>How to choose motion without making the page feel noisy</h2>
+        </div>
+        <div class="note-grid">
+          <article data-reveal>
+            <h3>Use transform and opacity for frequent motion</h3>
+            <p>These properties usually avoid layout recalculation. Avoid animating width, height, top, and left for repeated UI feedback.</p>
+          </article>
+          <article data-reveal>
+            <h3>Keep UI transitions short</h3>
+            <p>Buttons and controls should usually transition in 150-300ms. Longer motion belongs to page reveals, hero moments, or storytelling.</p>
+          </article>
+          <article data-reveal>
+            <h3>Match easing to direction</h3>
+            <p>Ease-out feels natural for entering elements because motion starts quickly and settles. Ease-in works for exits.</p>
+          </article>
+          <article data-reveal>
+            <h3>Respect reduced motion</h3>
+            <p>People with vestibular sensitivity may request less motion at OS level. The CSS disables continuous animation in that case.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="detailPage" class="detail-page" hidden aria-live="polite"></section>
+    </main>
+
+    <footer class="footer">
+      <p>Motion Atlas: 120 animation explanations, 24 transition patterns, and scroll image demos.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
